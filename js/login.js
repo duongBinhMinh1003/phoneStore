@@ -76,3 +76,15 @@ $(document).ready(function () {
         }
     })
 });
+<<<<<<< HEAD
+=======
+const login = () => {
+emailEl = document.getElementById("email").value;
+console.log('emailEl: ', emailEl);
+passwordEl = document.getElementById("password").value;
+console.log('passwordEl: ', passwordEl);
+if(emailEl == "duongbinhminh" && passwordEl == "duongbinhminh"){
+window.location.href = '/admin.html'
+}
+}
+>>>>>>> minh/master
