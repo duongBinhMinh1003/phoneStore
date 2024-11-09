@@ -20,23 +20,35 @@ Array.from(listControlItems).forEach((item) => {
             item.classList.add('active')
             contentContainer.innerHTML =
                 `
-                <div class="top-line">
+            <div class="top-line">
                 <h1 class="top-line__heading">TRANG CHỦ</h1>
             </div>
-            <div class="filter">
+           <div class="filter">
                 <div class="filter__container">
                     <label for="" class="filter__label">Chọn tháng cần xem</label>
                     <select name="filter__select" id="filter__select" class="filter__control">
                         <option value="">--Chọn tháng--</option>
-                        <option value="customer">Khách hàng</option>
-                        <option value="admin">Admin</option>
-
+                        
+                        <!-- <option value="customer">Khách hàng</option>
+                             <option value="admin">Admin</option> -->
+                        
+                        <option value="1">Tháng 1</option>
+                        <option value="2">Tháng 2</option>
+                        <option value="3">Tháng 3</option>
+                        <option value="4">Tháng 4</option>
+                        <option value="5">Tháng 5</option>
+                        <option value="6">Tháng 6</option>
+                        <option value="7">Tháng 7</option>
+                        <option value="8">Tháng 8</option>
+                        <option value="9">Tháng 9</option>
+                        <option value="10">Tháng 10</option>
+                        <option value="11">Tháng 11</option>
+                        <option value="12">Tháng 12</oxption>
                     </select>
                     <div class="filter__button">Lọc</div>
                 </div>
-
-
             </div>
+
 
 
 
@@ -57,9 +69,9 @@ Array.from(listControlItems).forEach((item) => {
                         <div class="box-analysis__icon">
                             <i class="fa-solid fa-money-bill"></i>
                         </div>
-                        <div class="box-analysis__label">Tổng hóa đơn</div>
+                        <div class="box-analysis__label">Tổng đơn hàng</div>
                     </div>
-                    <div class="box-analysis__number">100000</div>
+                    <div class="box-analysis__number">5</div>
                 </div>
                 <div class="box-analysis__item" data-value="total-price">
                     <div class="box-analysis__heading">
@@ -68,7 +80,7 @@ Array.from(listControlItems).forEach((item) => {
                         </div>
                         <div class="box-analysis__label">Tổng doanh thu</div>
                     </div>
-                    <div class="box-analysis__number">100000</div>
+                    <div class="box-analysis__number">138.000.000</div>
                 </div>
                 <div class="box-analysis__item" data-value="total-product">
                     <div class="box-analysis__heading">
@@ -77,7 +89,7 @@ Array.from(listControlItems).forEach((item) => {
                         </div>
                         <div class="box-analysis__label">Tổng sản phẩm bán ra</div>
                     </div>
-                    <div class="box-analysis__number">100000</div>
+                    <div class="box-analysis__number">9</div>
                 </div>
             </div>
             <div id="table_wrapper">
@@ -98,6 +110,18 @@ Array.from(listControlItems).forEach((item) => {
                                 <td>Samsung</td>
                                 <td>2</td>
                             </tr>
+                             <tr class="analysis-table__row">
+                                <td>iphone</td>
+                                <td>2</td>
+                            </tr>   
+                             <tr class="analysis-table__row">
+                                <td>oppo</td>
+                                <td>3</td>
+                            </tr>
+                             <tr class="analysis-table__row">
+                                <td>realme</td>
+                                <td>2</td>
+                            </tr>
 
                         </tbody>
                     </table>
@@ -110,13 +134,25 @@ Array.from(listControlItems).forEach((item) => {
                         <thead>
                             <tr class="analysis-table__heading">
                                 <th>Tên thương hiệu</th>
-                                <th>Số lượng</th>
+                                <th>Doanh thu</th>
                             </tr>
                         </thead>
                         <tbody class="analysis-table__list">
                             <tr class="analysis-table__row">
                                 <td>Samsung</td>
-                                <td>2</td>
+                                <td>38.000.000</td>
+                            </tr>
+                             <tr class="analysis-table__row">
+                                <td>iphone</td>
+                                <td>72.000.000</td>
+                            </tr>
+                             <tr class="analysis-table__row">
+                                <td>oppo</td>
+                                <td>19.000.000</td>
+                            </tr>
+                            <tr class="analysis-table__row">
+                                <td>realme</td>
+                                <td>9.000.000</td>
                             </tr>
 
                         </tbody>
@@ -127,6 +163,7 @@ Array.from(listControlItems).forEach((item) => {
             initDashboardPage()
 
         }
+
         if (item.getAttribute('data-value') === 'ql-nguoidung') {
             item.classList.add('active')
             contentContainer.innerHTML =
@@ -478,7 +515,7 @@ Array.from(listControlItems).forEach((item) => {
 
             initProductPage()
         }
-        if (item.getAttribute('data-value') === 'ql-hoadon') {
+        if (item.getAttribute('data-value') === 'ql-donhang') {
             item.classList.add('active')
 
             contentContainer.innerHTML = `
@@ -506,7 +543,7 @@ Array.from(listControlItems).forEach((item) => {
             </div>
             <div class="content__container">
                 <form id="form-admin">
-                    <div class="form-container">
+                    <!-- <div class="form-container">
 
                         <div class="form-group">
                             <label for="invoice-id" class="form-label">Mã HĐ</label>
@@ -544,17 +581,32 @@ Array.from(listControlItems).forEach((item) => {
                             <span class="form-message"></span>
                         </div>
 
+                       
+
+                        
+                    </div> -->
+                    <div class="form-controls">
                         <div class="form-label">
                             <div class="invoice-label">Đơn hàng chưa được xử lý! Nhấn nút để xử lý ngay</div>
                         </div>
 
-
-                    </div>
-                    <div class="form-controls">
                         <button class="btn-control" id="btn-process">Xử lý</button>
-                        <button class="btn-control" id="btn-cancel">Hủy</button>
+
+                        <button class="btn-control" id="btn-update">Xác nhận đang giao</button>
                     </div>
-                </form>
+                
+                    
+                </form> 
+
+                <div class="invoice-details">
+                    <div class="invoice-details__header">
+                        CHI TIẾT HÓA ĐƠN
+                    </div>
+                    <div class="invoice-details__list">
+                        
+                    </div>
+                </div>
+
                 <table id="product-table">
                     <thead>
                         <tr class="product-table__heading">
@@ -567,27 +619,21 @@ Array.from(listControlItems).forEach((item) => {
                         </tr>
                     </thead>
                     <tbody class="product-table__list">
-                        <tr class="product-table__row product-table__row--clicked">
-                            <td>1</td>
-                            <td>Samsung Galaxy S23 Ultra 256GB</td>
-                            <td>10000000</td>
-                            <td>9000000</td>
-                            <td>Đã xử lý</td>
-                            <td>
-                                <button class="product-table__see-btn product-table-btn">Xem</button>
-                            </td>
-                        </tr>
+                    <tr class="product-table__row product-table__row--clicked">
+                        <td>1</td>
+                        <td>11/05/2024</td>
+                        <td>1</td>
+                        <td>10000000</td>
+                        <td>Đã xử lý</td>
+                        <td>1</td>
+                        <td>
+                            <button class="product-table__see-btn product-table-btn">Xem</button>
+                        </td>
+                    </tr>
 
                     </tbody>
                 </table>
-                <div class="invoice-details">
-                    <div class="invoice-details__header">
-                        CHI TIẾT HÓA ĐƠN
-                    </div>
-                    <div class="invoice-details__list">
-                        
-                    </div>
-                </div>
+               
             </div>
             `
 
@@ -1003,7 +1049,22 @@ function initProductPage() {
 
 
 function initInvoicePage() {
-    const invoiceList = Invoice.getInvoices()
+    const invoiceList = [
+        { invoiceID: 1, orderTime: '2024-05-11T14:30', userID: 1, totalPrice: 20000000, status: true },
+        { invoiceID: 2, orderTime: '2024-05-10T09:15', userID: 2, totalPrice: 10000000, status: true },
+        { invoiceID: 3, orderTime: '2024-05-12T18:45', userID: 4, totalPrice: 7000000, status: false },
+        { invoiceID: 4, orderTime: '2024-11-10T10:00', userID: 3, totalPrice: 11000000, status: true },
+        { invoiceID: 5, orderTime: '2024-10-13T16:20', userID: 8, totalPrice: 10000000, status: true }
+    ];    
+    const orderDetails = [ // thêm để text
+        { invoiceID: 1, productIMG: "img/product/samsungs21.jpg", storeProduct: { name: "Samsung Galaxy S21" }, product_price: 5000000, quantity: 2, totalPrice: 10000000 },
+        { invoiceID: 1, productIMG: "img/product/iphone12.jpg", storeProduct: { name: "iPhone 12" }, product_price: 10000000, quantity: 1, totalPrice: 10000000 },
+        { invoiceID: 2, productIMG: "img/product/OPPOReno5.png", storeProduct: { name: "Oppo Reno 5" }, product_price: 10000000, quantity: 1, totalPrice: 10000000 },
+        { invoiceID: 3, productIMG: "img/product/XiaomiRNote10.png", storeProduct: { name: "Realme 7" }, product_price: 7000000, quantity: 1, totalPrice: 7000000 }
+    ];
+    
+    const invoiceDetailContainer = $('.invoice-details__list'); // thêm để text
+    // const invoiceList = Invoice.getInvoices()
     const invoiceIDInput = $('#invoice-id')
     const invoiceUserIDInput = $('#invoice-user-id')
     const invoiceOrderTimeInput = $('#invoice-order-time')
@@ -1011,42 +1072,88 @@ function initInvoicePage() {
     const invoiceStatusInput = $('#invoice-status')
     const message = $('.invoice-label')
     const processBtn = $('#btn-process')
-    const cancelBtn = $('#btn-cancel')
+    const updateBtn = $('#btn-update')
+
+
     function handleInvoiceActions() {
-
         //Nút lọc hóa đơn
-        const filterButton = $('.filter__button')
-        const startDateInput = $('#filter__start-date')
-        const endDateInput = $('#filter__end-date')
-        filterButton.addEventListener('click', () => {
-            const startDate = time.getDateTime(startDateInput.value)
-            const endDate = time.getDateTime(endDateInput.value)
+        // const filterButton = $('.filter__button')
+        // const startDateInput = $('#filter__start-date')
+        // const endDateInput = $('#filter__end-date')
+        // filterButton.addEventListener('click', () => {
+        //     const startDate = time.getDateTime(startDateInput.value)
+        //     const endDate = time.getDateTime(endDateInput.value)
 
-            const filterList = Invoice.getInvoiceByDateTime(startDate, endDate)
-            renderInvoice(filterList)
-        })
+        //     const filterList = Invoice.getInvoiceByDateTime(startDate, endDate)
+        //     renderInvoice(filterList)
+        // })
 
-        processBtn.addEventListener('click', (e) => {
+       
+            const filterButton = $('.filter__button');
+            const startDateInput = $('#filter__start-date');
+            const endDateInput = $('#filter__end-date');
+            
+            filterButton.addEventListener('click', () => {
+                const startDate = startDateInput.value;  // Giá trị định dạng YYYY-MM-DDTHH:MM
+                const endDate = endDateInput.value;      // Giá trị định dạng YYYY-MM-DDTHH:MM
+                
+             // Kiểm tra xem cả hai trường có giá trị hay không
+                if (!startDate || !endDate) {
+                    alert('Vui lòng nhập đầy đủ thông tin ngày bắt đầu và ngày kết thúc.'); // Thông báo nếu chưa nhập đủ
+                return; // Dừng thực hiện nếu không đủ thông tin
+                }
 
-            e.preventDefault()
-
-            const invoiceID = clickedRow.selectedInvoiceID;
-            Invoice.updateInvoiceStatus(parseInt(invoiceID), true)
-            const newList = Invoice.getInvoices()
-            renderInvoice(newList)
-            resetValue()
-        })
-
-        cancelBtn.addEventListener('click', (e) => {
-            resetValue()
-            e.preventDefault()
-        })
+                // Lọc hóa đơn theo khoảng thời gian
+                const filterList = invoiceList.filter(invoice => {
+                    const invoiceDate = invoice.orderTime;  // Ngày giờ của hóa đơn
+                    return invoiceDate >= startDate && invoiceDate <= endDate;  // So sánh ngày giờ
+                });
+                
+                renderInvoice(filterList);  // Hiển thị hóa đơn sau khi lọc
+            });
+            
+        
+            
+            processBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+            
+                const invoiceID = clickedRow.selectedInvoiceID; // Lấy mã hóa đơn đã chọn
+                const invoiceStatus = $(`.product-table__row--clicked[data-value="${invoiceID}"] td:nth-child(5)`).innerText; // Lấy trạng thái hóa đơn
+            
+                // Kiểm tra trạng thái hóa đơn
+                if (invoiceStatus === 'Chưa xử lý') {
+                    Invoice.updateInvoiceStatus(parseInt(invoiceID), true); // Cập nhật trạng thái hóa đơn
+                    const newList = Invoice.getInvoices(); // Lấy danh sách hóa đơn mới
+                    renderInvoice(newList); // Hiển thị lại danh sách hóa đơn
+                    resetValue(); // Đặt lại trạng thái
+                } else {
+                    alert('Đơn hàng đã được xử lý, không thể xác nhận lại.'); // Thông báo nếu đơn hàng đã xử lý
+                }
+            });
+           
+            updateBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+            
+                const invoiceID = clickedRow.selectedInvoiceID; // Lấy mã hóa đơn đã chọn
+                const invoiceStatus = $(`.product-table__row--clicked[data-value="${invoiceID}"] td:nth-child(5)`).innerText; // Lấy trạng thái hóa đơn
+            
+                // Kiểm tra trạng thái hóa đơn
+                if (invoiceStatus === 'Đã xử lý') {
+                    Invoice.updateInvoiceStatus(parseInt(invoiceID), 'Đang giao'); // Cập nhật trạng thái hóa đơn
+                    const newList = Invoice.getInvoices(); // Lấy danh sách hóa đơn mới
+                    renderInvoice(newList); // Hiển thị lại danh sách hóa đơn
+                    resetValue(); // Đặt lại trạng thái
+                } else {
+                    alert('Chỉ có thể xác nhận đơn hàng đang giao khi đơn hàng đã được xử lý.'); // Thông báo nếu trạng thái không hợp lệ
+                }
+            });
 
     }
     handleInvoiceActions()
     renderInvoice(invoiceList)
 
 
+    
     function renderInvoice(listInvoice) {
         const tableBody = $('.product-table__list')
 
@@ -1061,14 +1168,23 @@ function initInvoicePage() {
             html += `
             <tr class="product-table__row product-table__row--clicked" data-value="${invoice.invoiceID}">
                             <td>${invoice.invoiceID}</td>
-                            <td>${time.getDateTime(invoice.orderTime)}</td>
+                
+                            <!-- <td>${time.getDateTime(invoice.orderTime)}</td> --> 
+                            <td>${invoice.orderTime.replace('T', ' ')}</td>
+                
                             <td>${invoice.userID}</td>
-                            <td>${money.formatCurrencytoVND(Invoice.getTotalPriceOfInvoice(invoice.invoiceID))}</td>
+
+                            <td>${money.formatCurrencytoVND(invoice.totalPrice)}</td>
+                            <!-- <td>${money.formatCurrencytoVND(Invoice.getTotalPriceOfInvoice(invoice.invoiceID))}</td> -->
+                
                             <td>${status}</td>
+                
                             <td>
                                 <button class="product-table__see-btn product-table-btn">Xem</button>
                             </td>
-                        </tr>
+             
+               </tr>
+
             `
         })
 
@@ -1097,84 +1213,204 @@ function initInvoicePage() {
         message.classList.remove('active')
     }
 
+    // function clickedRow() {
+    //     const rowTable = $$('.product-table__row--clicked')
+    //     Array.from(rowTable).forEach(row => {
+    //         row.addEventListener('click', () => {
+    //             const invoiceID = row.cells[0].innerText;
+    //             clickedRow.selectedInvoiceID = invoiceID;
+    //             const invoiceOrderTime = row.cells[1].innerText;
+    //             const invoiceUserID = row.cells[2].innerText;
+    //             const invoiceTotalPrice = row.cells[3].innerText;
+    //             const invoiceStatus = row.cells[4].innerText;
+
+    //             invoiceIDInput.disabled = true
+    //             invoiceUserIDInput.disabled = true
+    //             invoiceOrderTimeInput.disabled = true
+    //             invoiceTotalPriceInput.disabled = true
+    //             invoiceStatusInput.disabled = true
+
+    //             if (invoiceStatus === 'Chưa xử lý') {
+
+    //                 message.classList.add('active')
+    //                 processBtn.disabled = false;
+
+    //             }
+    //             else {
+    //                 processBtn.disabled = true;
+
+    //                 message.classList.remove('active')
+
+    //                 // processBtn.style.backgroundColor = '#999'
+
+
+    //             }
+    //             invoiceIDInput.value = invoiceID
+    //             invoiceOrderTimeInput.value = invoiceOrderTime
+    //             invoiceUserIDInput.value = invoiceUserID
+    //             invoiceTotalPriceInput.value = invoiceTotalPrice
+    //             invoiceStatusInput.value = invoiceStatus
+    //         })
+    //     })
+    // }
+
     function clickedRow() {
-        const rowTable = $$('.product-table__row--clicked')
+        const rowTable = $$('.product-table__row--clicked');
         Array.from(rowTable).forEach(row => {
             row.addEventListener('click', () => {
-                const invoiceID = row.cells[0].innerText;
-                clickedRow.selectedInvoiceID = invoiceID;
-                const invoiceOrderTime = row.cells[1].innerText;
-                const invoiceUserID = row.cells[2].innerText;
-                const invoiceTotalPrice = row.cells[3].innerText;
-                const invoiceStatus = row.cells[4].innerText;
-
-                invoiceIDInput.disabled = true
-                invoiceUserIDInput.disabled = true
-                invoiceOrderTimeInput.disabled = true
-                invoiceTotalPriceInput.disabled = true
-                invoiceStatusInput.disabled = true
-
+                const invoiceID = row.cells[0].innerText; // Lấy mã hóa đơn
+                clickedRow.selectedInvoiceID = invoiceID; // Lưu mã hóa đơn đã chọn
+    
+                const invoiceStatus = row.cells[4].innerText; // Lấy trạng thái hóa đơn
+    
+                // Kích hoạt nút "Xác nhận", "Hủy" và "Xác nhận đang giao"
+                processBtn.disabled = false; // Kích hoạt nút "Xác nhận"
+                updateBtn.disabled = false; // Kích hoạt nút "Xác nhận đang giao"
+    
+                // Kiểm tra trạng thái để quyết định nút "Xác nhận" và "Xác nhận đang giao"
                 if (invoiceStatus === 'Chưa xử lý') {
-
-                    message.classList.add('active')
-                    processBtn.disabled = false;
-
+                    processBtn.disabled = false; // Kích hoạt nút "Xác nhận"
+                    updateBtn.disabled = true; // Vô hiệu hóa nút "Xác nhận đang giao"
+                } else if (invoiceStatus === 'Đã xử lý') {
+                    processBtn.disabled = true; // Vô hiệu hóa nút "Xác nhận"
+                    updateBtn.disabled = false; // Kích hoạt nút "Xác nhận đang giao"
+                } else {
+                    processBtn.disabled = true; // Vô hiệu hóa nút "Xác nhận"
+                    updateBtn.disabled = true; // Vô hiệu hóa nút "Xác nhận đang giao"
                 }
-                else {
-                    processBtn.disabled = true;
-
-                    message.classList.remove('active')
-
-                    // processBtn.style.backgroundColor = '#999'
-
-
-                }
-                invoiceIDInput.value = invoiceID
-                invoiceOrderTimeInput.value = invoiceOrderTime
-                invoiceUserIDInput.value = invoiceUserID
-                invoiceTotalPriceInput.value = invoiceTotalPrice
-                invoiceStatusInput.value = invoiceStatus
-            })
-        })
-
-
-
+            });
+        });
     }
 
 
+     // Vô hiệu hóa các nút khi khởi tạo
+        processBtn.disabled = true; // Vô hiệu hóa nút "Xác nhận"
+        updateBtn.disabled = true; // Vô hiệu hóa nút "Xác nhận đang giao"
 
+        // Gọi hàm clickedRow để thiết lập sự kiện click cho các dòng
+        clickedRow();
+
+
+
+    // function renderDetailProduct(invoiceID) {
+    //     const invoiceDetailList = $('.invoice-details__list')
+    //     const listDetailInvoice = orderDetails.filter(detail => detail.invoiceID === invoiceID); // mảng thêm để text
+    //     // const listDetailInvoice = Invoice.getDetailInvoice(invoiceID)
+    //     let html = ''
+    //     listDetailInvoice.forEach(detailInvoice => {
+    //         html += `
+    //         <div class="invoice-details__item">
+    //             <img class="invoice-details__img"
+    //                 src="${detailInvoice.productIMG}"
+    //                 alt="">
+    //             <div class="invoice-details__item-wrapper">
+    //                 <div class="invoice-details__name">
+    //                    ${detailInvoice.storeProduct.name}
+    //                 </div>
+    //                 <div class="invoice-details__price">
+    //                     <span class="invoice-details__price-label">Đơn giá: </span>
+    //                     ${money.formatCurrencytoVND(detailInvoice.product_price)}
+    //                 </div>
+    //                 <div class="invoice-details__quantity">
+    //                     <span class="invoice-details__quantity-label">Số lượng: </span>
+    //                     ${detailInvoice.quantity}
+    //                 </div>
+    //                 <div class="invoice-details__total-price">
+    //                     <span class="invoice-details__total-price-label">Tổng tiền: </span>
+    //                     ${money.formatCurrencytoVND(detailInvoice.totalPrice)}
+    //                 </div>
+    //             </div>
+    //         </div>
+    //         `
+    //     })
+    //     invoiceDetailList.innerHTML = html
+    // }
 
     function renderDetailProduct(invoiceID) {
-        const invoiceDetailList = $('.invoice-details__list')
-        const listDetailInvoice = Invoice.getDetailInvoice(invoiceID)
-        let html = ''
+        const invoiceDetailList = $('.invoice-details__list');
+        const listDetailInvoice = orderDetails.filter(detail => detail.invoiceID === invoiceID); // mảng thêm để text
+        let html = '';
+    
+        html += `
+        <div class="product-detail-header">
+            <button class="close-detail-btn" style="float: right; cursor: pointer;">&times;</button>
+        </div>
+        <table class="product-detail-table">
+            <thead>
+                <tr>
+                    <th>Mã sản phẩm</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Mã phiên bản</th>
+                    <th>Số seri</th>
+                    <th>RAM</th>
+                    <th>Màu</th>
+                    <th>Giá bán</th>
+                    <th>Số lượng</th>
+                    <th>Tổng tiền</th>
+                </tr>
+            </thead>
+            <tbody>
+        `;
+    
+        const productSummary = {};
+    
         listDetailInvoice.forEach(detailInvoice => {
+            const productKey = detailInvoice.storeProduct.name; // Sử dụng tên sản phẩm làm khóa
+            if (!productSummary[productKey]) {
+                productSummary[productKey] = {
+                    productID: detailInvoice.storeProduct.id, // Giả sử có thuộc tính id
+                    name: detailInvoice.storeProduct.name,
+                    version: detailInvoice.storeProduct.version, // Giả sử có thuộc tính version
+                    serial: detailInvoice.storeProduct.serial, // Giả sử có thuộc tính serial
+                    ram: detailInvoice.storeProduct.ram, // Giả sử có thuộc tính ram
+                    color: detailInvoice.storeProduct.color, // Giả sử có thuộc tính color
+                    price: detailInvoice.product_price,
+                    quantity: 0,
+                    total: 0
+                };
+            }
+            productSummary[productKey].quantity += detailInvoice.quantity;
+            productSummary[productKey].total += detailInvoice.product_price * detailInvoice.quantity;
+        });
+    
+        // Tạo các dòng cho bảng
+        for (const product in productSummary) {
+            const item = productSummary[product];
             html += `
-            <div class="invoice-details__item">
-                <img class="invoice-details__img"
-                    src="${detailInvoice.productIMG}"
-                    alt="">
-                <div class="invoice-details__item-wrapper">
-                    <div class="invoice-details__name">
-                       ${detailInvoice.storeProduct.name}
-                    </div>
-                    <div class="invoice-details__price">
-                        <span class="invoice-details__price-label">Đơn giá: </span>
-                        ${money.formatCurrencytoVND(detailInvoice.product_price)}
-                    </div>
-                    <div class="invoice-details__quantity">
-                        <span class="invoice-details__quantity-label">Số lượng: </span>
-                        ${detailInvoice.quantity}
-                    </div>
-                    <div class="invoice-details__total-price">
-                        <span class="invoice-details__total-price-label">Tổng tiền: </span>
-                        ${money.formatCurrencytoVND(detailInvoice.totalPrice)}
-                    </div>
-                </div>
-            </div>
-            `
-        })
-        invoiceDetailList.innerHTML = html
+                <tr>
+                    <td>${item.productID}</td>
+                    <td>${item.name}</td>
+                    <td>${item.version}</td>
+                    <td>${item.serial}</td>
+                    <td>${item.ram}</td>
+                    <td>${item.color}</td>
+                    <td>${money.formatCurrencytoVND(item.price)}</td>
+                    <td>${item.quantity}</td>
+                    <td>${money.formatCurrencytoVND(item.total)}</td>
+                </tr>
+            `;
+        }
+    
+        html += `
+            </tbody>
+        </table>
+        `;
+
+        invoiceDetailList.innerHTML = html;
+    
+        const closeButton = invoiceDetailList.querySelector('.close-detail-btn');
+        closeButton.addEventListener('click', () => {
+            invoiceDetailList.innerHTML = '';
+            resetInvoicePage(); 
+        });
+    }
+    
+   
+    function resetInvoicePage() {
+        processBtn.disabled = true; 
+        updateBtn.disabled = true; 
+
+        resetValue(); 
     }
 
 
@@ -1384,6 +1620,7 @@ function initUserPage() {
 }
 
 function initDashboardPage() {
+    const dashboardList = dashboard.getDashboard()
     const boxItem = $$('.box-analysis__item')
     const filterSelect = document.getElementById('filter__select');
     const filterButton = $('.filter__button')
@@ -1500,4 +1737,4 @@ function initDashboardPage() {
     renderTable()
 }
 
-// initInvoicePage()
+// initDashboardPage()
