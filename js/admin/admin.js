@@ -636,6 +636,222 @@ Array.from(listControlItems).forEach((item) => {
                
             </div>
             `
+            initInvoicePage()
+        }
+        if (item.getAttribute('data-value') === 'ql-phieunhap') {
+            item.classList.add('active')
+
+
+            contentContainer.innerHTML = `
+            <div class="top-line">
+                <h1 class="top-line__heading">QUẢN LÝ PHIẾU NHẬP</h1>
+            </div>
+            <div class="form-group">
+                    <label class="tieuDe">Tìm phiếu nhập</label>
+                    <input id="" name="" type="text" class="form-control">
+                </div>
+            <button onclick="thempn()" class="button button-luu" id="themPhieuNhapMoi">Thêm phiếu nhập mới</button>
+            <h4>Danh Sách Phiếu nhập<h4>
+            <table id="product-table">
+                <thead>
+                    <tr class="product-table__heading">
+                        <th>Mã phiếu nhập</th>
+                        <th>Mã nhà cung cấp</th>
+                        <th>Mã nhân viên nhập hàng</th>
+                        <th>Giá nhập</th>
+                        <th>Trạng thái</th>
+                        <th>Ngày nhập</th>
+                        <th>Xem chi tiết</th>
+                    </tr>
+                </thead>
+                <tbody class="">
+                    <tr class="product-table__row">
+                        <td>PN1</td>
+                        <td>NCC1</td>
+                        <td>NV1</td>
+                        <td>1000000</td>
+                        <td>
+                        <select>
+                            <option value="">Đã xác nhận</option>
+                            <option value="">Chưa xác nhận</option>
+                        </select>
+                        </td>
+                        <td>
+                        31/10/2024
+                        </td>
+                        <td>
+                            <button onclick="xemChiTiet()" class="buttonTable">Chi tiết</button>
+                            <button class="buttonTable buttonTable-xoa">Xóa</button>
+                            <button class="buttonTable">Sửa</button>
+                        </td>
+                    </tr>
+                    <tr class="product-table__row">
+                        <td>PN1</td>
+                        <td>NCC1</td>
+                        <td>NV1</td>
+                        <td>1000000</td>
+                        <td>
+                        <select>
+                            <option value="">Đã xác nhận</option>
+                            <option value="">Chưa xác nhận</option>
+                        </select>
+                        </td>
+                        <td>
+                        31/10/2024
+                        </td>
+                        <td>
+                            <button onclick="xemChiTiet()" class="buttonTable">Chi tiết</button>
+                            <button class="buttonTable buttonTable-xoa">Xóa</button>
+                            <button class="buttonTable">Sửa</button>
+                        </td>
+                    </tr>
+                    <tr class="product-table__row">
+                        <td>PN1</td>
+                        <td>NCC1</td>
+                        <td>NV1</td>
+                        <td>1000000</td>
+                        <td>
+                        <select>
+                            <option value="">Đã xác nhận</option>
+                            <option value="">Chưa xác nhận</option>
+                        </select>
+                        </td>
+                        <td>
+                        31/10/2024
+                        </td>
+                        <td>
+                            <button onclick="xemChiTiet()" class="buttonTable">Chi tiết</button>
+                            <button class="buttonTable buttonTable-xoa">Xóa</button>
+                            <button class="buttonTable">Sửa</button>
+                        </td>
+                    </tr>
+                   
+                    
+                    
+
+                </tbody>
+            </table>
+           
+           
+            `
+
+            initProductPage()
+        }
+        if (item.getAttribute('data-value') === 'ql-Sanpham') {
+            item.classList.add('active')
+
+            contentContainer.innerHTML = `
+            <div class="top-line">
+        <h1 class="top-line__heading">Quản lý sản phẩm</h1>
+    </div>
+
+
+    <div class="content__container">
+        <ul class="function__list">
+            <li class="function__item active" data-value="add">
+                <span class="function__item-title">
+                    Thêm mới
+                </span>
+            </li>
+
+
+        </ul>
+        <form id="form-admin">
+            <div class="form-container">
+
+                <div class="form-group">
+                    <label for="user-id" class="form-label">Mã sản phẩm</label>
+
+                    <input id="user-id" name="user-id" type="text" class="form-control" disabled="true">
+
+                    <span class="form-message"></span>
+                </div>
+                <div class="form-group">
+                    <label for="user-full_name" class="form-label">Tên sản phẩm</label>
+
+                    <input id="user-full_name" name="user-full_name" type="text" class="form-control">
+
+                    <span class="form-message"></span>
+                </div>
+                <div class="form-group">
+                    <label for="user-id" class="form-label">Brand</label>
+                    <select class="form-control">
+                        <option>Samsung</option>
+                        <option>Iphone</option>
+                        <option>Xiaomi</option>
+                        <option>Oppo</option>
+                        <option>Vivo</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="user-id" class="form-label">Tìm kiếm sản phẩm</label>
+
+                    <input id="user-id" name="user-id" type="text" class="form-control" disabled="true">
+
+                    <span class="form-message"></span>
+                </div>
+                
+
+
+            </div>
+            <div class="form-controls">
+                <button class="button-luu button" id="">Lưu</button>
+                <button class="button-huy button" id="">Hủy</button>
+            </div>
+        </form>
+        <table id="product-table">
+            <thead>
+                <tr class="product-table__heading">
+                    <th>Mã SP</th>
+                    <th>Tên SP</th>
+                    <th>Hệ điều hành</th>
+                    <th>Brand</th>
+                    <th>xuất xứ</th>
+                    <th>Cam trước</th>
+                    <th>Cam sau</th>
+                    <th>Pin</th>
+                    <th>Thời hạn bảo hành</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody class="product-table__list">
+                <tr class="product-table__row">
+                    <td>1</td>
+                    <td>Samsung Galaxy S23 Ultra</td>
+                    <td>Android</td>
+                    <td>Samsung</td>
+                    <td>china</td>
+                    <td>50mp</td>
+                    <td>200mp</td>
+                    <td>5000</td>
+                    <td>6 tháng</td>
+                    <td>
+                        <button class="buttonTable" onclick="xemPB()">Xem phiên bản</button>
+                        <button class="buttonTable">Sửa</button>
+                        <button class="buttonTable buttonTable-xoa">Xóa</button>
+                    </td>
+                </tr>
+                <tr class="product-table__row">
+                    <td>2</td>
+                    <td>iphone 16 pro max</td>
+                    <td>Ios</td>
+                    <td>Apple</td>
+                    <td>china</td>
+                    <td>50mp</td>
+                    <td>200mp</td>
+                    <td>5000</td>
+                    <td>6 tháng</td>
+                    <td>
+                        <button class="buttonTable" onclick="xemPB()">Xem phiên bản</button>
+                        <button class="buttonTable">Sửa</button>
+                        <button class="buttonTable buttonTable-xoa">Xóa</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+            `
 
             initInvoicePage()
         }
@@ -650,7 +866,16 @@ Array.from(listControlItems).forEach((item) => {
         })
     })
 })
+const thempn = () => {
+    window.location.href = "./PADung/themPhieuNhap.html"
+}
+const xemChiTiet = () => {
 
+    window.location.href="./PADung/chiTietPhieuNhap.html"
+}
+const xemPB = () => {
+     window.location.href="./PADung/xemPhienBan.html"
+}
 // Các hàm validate
 const validate = {
     validateProductName: function (name) {
