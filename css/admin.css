@@ -10,6 +10,7 @@
 
 .info__detail {
   padding: 30px 0px;
+    padding: 10px 0px;
 }
 
 .info__container {
@@ -39,6 +40,12 @@
   list-style-type: none;
   display: flex;
   flex-direction: column;
+    height: 100%;
+    flex: 1;
+    margin-top: 20px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
 }
 
 .nav-links__item {
@@ -80,6 +87,7 @@
 
 .nav-links__change {
   margin-top: 150px;
+    margin-top: 120px;
 }
 
 /* Quản lý sản phẩm */
@@ -158,6 +166,11 @@
   flex-direction: column;
   width: 50%;
   padding: 0 10px;
+    display: flex;
+    margin-bottom: 16px;
+    flex-direction: column;
+    width: 33%;
+    padding: 0 10px;
 }
 
 .form-group.form-group--full {
@@ -232,6 +245,15 @@
   justify-content: flex-end;
   margin-right: 10%;
   padding-bottom: 10px;
+    flex-direction: column-reverse;
+    /* display: flex; */
+    justify-content: flex-end;
+    margin-right: 50%;
+    padding-bottom: 15x;
+    /* margin-top:13px;
+    padding: 25px 40px; */
+    
+    
 }
 
 .btn-control {
@@ -245,6 +267,7 @@
 
 #btn-save {
   background-color: #49cb3f;
+    background-color: #49CB3F;
 }
 
 #btn-save:hover {
@@ -257,8 +280,14 @@
 
 #btn-cancel:hover {
   background-color: var(--primary-color);
+
+#btn-update:hover {
+    background-color:yellow;
 }
 
+#btn-update {
+    border: 1px solid var(--text-color)
+}
 /* Table */
 #product-table {
   margin-top: 20px;
@@ -267,6 +296,13 @@
   border: 3px solid var(--primary-color);
   border-radius: 4px;
   text-align: center;
+    margin-top: 10px;
+    margin-bottom: 70px;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid var(--primary-color);
+    border-radius: 4px;
+    text-align: center;
 }
 
 #product-table .product-table__heading {
@@ -470,6 +506,50 @@ td:nth-child(8) {
 .invoice-details__total-price {
 }
 
+.product-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-detail-btn {
+    position: absolute; /* Đặt vị trí tuyệt đối cho nút "Đóng" */
+    top: 220px; /* Khoảng cách từ trên xuống */
+    right: 50px; /* Khoảng cách từ bên phải */
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: red; /* Màu sắc cho nút đóng */
+    cursor: pointer;
+}
+
+
+
+.product-detail-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.product-detail-table th,
+.product-detail-table td {
+    border: 1px solid var(--primary-color);
+    padding: 8px;
+    text-align: center;
+}
+
+.product-detail-table th {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.product-detail-table tbody tr:nth-child(odd) {
+    background-color: var(--white-color);
+}
+
+.product-detail-table tbody tr:hover {
+    background-color: var(--filter-item-color);
+}
 /* Quản lý hóa đơn */
 
 /* Dashboard thống kê */
@@ -553,6 +633,22 @@ td:nth-child(8) {
   padding: 8px;
   width: 550px;
   align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin : 10px 10px 50px 10px;
+}
+
+.table__container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    width: 100%;
+    align-items: center;
+
+  
+  
 }
 
 .table__title {
